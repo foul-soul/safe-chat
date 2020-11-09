@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<br>
+<div class="jumbotron text-center">
+    {% if session.logged_in == NULL%}
+        <h1>Welcome to SafeChat</h1>
+        <p class="lead">This chat app build on the flask framework.<br> Hope you like this.</p>
+        <a href="/register" class="btn btn-primary btn-lg">Sign Up</a>
+        <a href="/login" class="btn btn-success btn-lg">Login</a>
+    {% else %}
+        <h1>Hi {{ session.s_name }}</h1>
+        <p class="lead">This chat app build on the flask framework.<br> Hope you like this.</p>
+        <a href="/chatting/{{ session.uid }}" class="btn btn-primary btn-lg">Let's Start safe Chatting</a>
+    {% endif %}
+</div>
+<br>
+<div class="jumbotron text-center">
+        <p class="lead">Flask is a micro web framework written in Python.<br>
+            It is classified as a microframework because it does not<br>
+            require particular tools or libraries. It has no database<br>
+            abstraction layer, form validation, or any other components<br>
+            where pre-existing third-party libraries provide common functions..<br>
+            Hope you like this.<br><br> this project can be integrate in different websites<br>
+            which require a realtime secure chat functionality.
+        </p>
+</div>
+{% endblock %}
